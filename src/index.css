@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Thermal and standard print formatting */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print-modal-wrapper {
+    position: static !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #printable-receipt {
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: 1px solid #64748b !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    max-height: 98vh !important;
+  }
+
+  table, tr, td, th {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Thermal receipt 80mm container */
+  .receipt-thermal-80 {
+    width: 78mm !important;
+    margin: 0 auto !important;
+    padding: 2mm !important;
+    font-size: 10px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  /* Thermal receipt 58mm container */
+  .receipt-thermal-58 {
+    width: 54mm !important;
+    margin: 0 auto !important;
+    padding: 1.5mm !important;
+    font-size: 8.5px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  /* Compact mode for A4/Standard */
+  .receipt-compact-a4 {
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+  }
+
+  @page {
+    margin: 3mm 4mm;
+    size: auto;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
